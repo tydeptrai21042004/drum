@@ -1,0 +1,125 @@
+/* frontend/src/components/Register.css */
+
+/* Re-use or adapt styles from Login.css for consistency */
+.register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 20px;
+    background-color: #f4f7f6;
+    font-family: Arial, sans-serif;
+  }
+  
+  .register-container h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+  }
+  
+  .register-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit form width */
+    box-sizing: border-box;
+  }
+  
+  .register-form .input-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .register-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .register-form input[type="email"],
+  .register-form input[type="password"],
+  .register-form input[type="text"] /* For when password becomes text */
+  {
+    width: 100%;
+    padding: 12px 15px;
+    padding-right: 45px; /* Space for toggle button */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  
+  .register-form input[type="email"] {
+     padding-right: 15px; /* Email doesn't need space for button */
+  }
+  
+  
+  .register-form .password-wrapper {
+    position: relative;
+    margin-bottom: 5px; /* Reduce margin slightly if error message follows */
+  }
+  
+  .password-toggle-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.9em;
+    padding: 5px;
+  }
+  
+  .password-toggle-btn:hover {
+    color: #000;
+  }
+  
+  /* Specific style for password mismatch error */
+  .password-error {
+    color: #e74c3c; /* Red error color */
+    font-size: 0.85em;
+    min-height: 1.1em; /* Reserve space */
+    margin-top: -15px; /* Pull up slightly below confirm password */
+    margin-bottom: 15px; /* Add space before button */
+    text-align: left; /* Align to the start of the input */
+  }
+  
+  
+  .register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #28a745; /* Green color for register */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Ensure space above button */
+  }
+  
+  .register-btn:hover {
+    background-color: #218838; /* Darker green on hover */
+  }
+  
+  .register-message {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    min-height: 1.2em;
+  }
+  
+  .register-message.success {
+     color: #2ecc71;
+  }
+  
+  .register-message.error {
+     color: #e74c3c;
+  }

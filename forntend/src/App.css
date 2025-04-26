@@ -1,0 +1,28 @@
+/* frontend/src/App.css */
+
+/* Basic Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body, #root {
+    height: 100%; /* Ensure html/body take full height */
+    font-family: sans-serif; /* Or your preferred font */
+    background-color: #f4f7f6; /* Optional default background for body */
+  }
+  
+  .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure container takes at least full viewport height */
+  }
+  
+  .main-content {
+    flex: 1 0 auto; /* Allow main content to grow and shrink, basis auto */
+    /* flex-grow: 1; is often sufficient */
+    padding: 20px 0; /* Add some padding top/bottom to content area */
+  }
+  
+  /* You might add global link styles or other base styles here */

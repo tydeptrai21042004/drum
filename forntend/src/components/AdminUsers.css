@@ -1,0 +1,333 @@
+/* frontend/src/components/AdminUsers.css */
+
+/* ----- Variables ----- */
+:root {
+  --admin-primary-color: #4a627a; /* Deep blue-grey */
+  --admin-secondary-color: #7890a8; /* Lighter blue-grey */
+  --admin-accent-color: #e9ecef; /* Light grey for backgrounds */
+  --admin-text-color: #333;
+  --admin-light-text-color: #fff;
+  --admin-border-color: #dee2e6;
+  --admin-error-bg: #f8d7da;
+  --admin-error-text: #721c24;
+  --admin-error-border: #f5c6cb;
+  --admin-success-bg: #d4edda;
+  --admin-success-text: #155724;
+  --admin-success-border: #c3e6cb;
+  --admin-info-bg: #e2e3e5;
+  --admin-info-text: #383d41;
+  --admin-info-border: #d6d8db;
+  --admin-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --admin-border-radius: 8px;
+  --admin-spacing-unit: 1rem; /* Approx 16px */
+}
+
+/* ----- General Container ----- */
+.admin-container {
+  max-width: 1200px; /* Wider max-width */
+  margin: calc(var(--admin-spacing-unit) * 1.5) auto; /* 24px top/bottom margin */
+  padding: calc(var(--admin-spacing-unit) * 1.5) calc(var(--admin-spacing-unit) * 2); /* 24px 32px padding */
+  background-color: #ffffff;
+  border-radius: var(--admin-border-radius);
+  box-shadow: var(--admin-shadow);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--admin-text-color);
+}
+
+.admin-container h1 {
+  text-align: center;
+  color: var(--admin-primary-color);
+  margin-bottom: calc(var(--admin-spacing-unit) * 2); /* 32px */
+  font-size: 2em;
+  font-weight: 600;
+}
+
+/* ----- Section Styling ----- */
+.admin-section {
+  background-color: #fdfdfd; /* Slightly off-white background for sections */
+  padding: calc(var(--admin-spacing-unit) * 1.5); /* 24px */
+  margin-bottom: calc(var(--admin-spacing-unit) * 2); /* 32px */
+  border-radius: var(--admin-border-radius);
+  border: 1px solid var(--admin-border-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.admin-section h2 {
+  color: var(--admin-primary-color);
+  margin-top: 0;
+  margin-bottom: calc(var(--admin-spacing-unit) * 1.5); /* 24px */
+  font-size: 1.5em;
+  border-bottom: 2px solid var(--admin-accent-color);
+  padding-bottom: calc(var(--admin-spacing-unit) * 0.5); /* 8px */
+  font-weight: 500;
+}
+
+/* ----- Message Styling (Error, Info, Success) ----- */
+.admin-error-message,
+.admin-info-message,
+.reply-status {
+  padding: var(--admin-spacing-unit); /* 16px */
+  margin-top: var(--admin-spacing-unit);
+  margin-bottom: var(--admin-spacing-unit);
+  border-radius: 5px;
+  border: 1px solid transparent;
+  text-align: center;
+  font-size: 0.95em;
+}
+
+.admin-error-message {
+  color: var(--admin-error-text);
+  background-color: var(--admin-error-bg);
+  border-color: var(--admin-error-border);
+}
+
+.admin-info-message { /* Used for "No users found", etc. */
+  color: var(--admin-info-text);
+  background-color: var(--admin-info-bg);
+  border-color: var(--admin-info-border);
+  font-style: italic;
+}
+
+.reply-status.success {
+  color: var(--admin-success-text);
+  background-color: var(--admin-success-bg);
+  border-color: var(--admin-success-border);
+}
+
+.reply-status.error {
+  color: var(--admin-error-text);
+  background-color: var(--admin-error-bg);
+  border-color: var(--admin-error-border);
+}
+
+
+/* ----- Table Styling ----- */
+.table-responsive-wrapper {
+  overflow-x: auto; /* Ensures horizontal scroll on small screens */
+  margin-top: var(--admin-spacing-unit); /* 16px */
+  border: 1px solid var(--admin-border-color);
+  border-radius: 6px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em;
+  background-color: #fff;
+  min-width: 600px; /* Prevents table collapsing too much */
+}
+
+.admin-table thead tr {
+  background-color: var(--admin-primary-color);
+  color: var(--admin-light-text-color);
+  text-align: left;
+  font-weight: 600; /* Bolder headers */
+  letter-spacing: 0.5px;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: calc(var(--admin-spacing-unit) * 0.75) var(--admin-spacing-unit); /* 12px 16px */
+  border-bottom: 1px solid var(--admin-border-color);
+  vertical-align: middle; /* Align cell content vertically */
+}
+
+.admin-table th {
+  /* Header specific */
+}
+
+.admin-table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:nth-of-type(even) {
+  background-color: var(--admin-accent-color);
+}
+
+.admin-table tbody tr:hover {
+  background-color: #dbe2e9; /* Slightly darker hover */
+}
+
+.admin-table tbody tr:last-of-type td {
+  border-bottom: none;
+}
+
+/* Optional: Specific column styling */
+.admin-users-table td:nth-child(2), /* Role column */
+.admin-workspaces-table td:nth-child(2) { /* Code column */
+  font-family: 'Courier New', Courier, monospace;
+  color: #555;
+}
+
+.admin-table td:last-child { /* Date columns */
+  font-size: 0.85em;
+  color: #666;
+  white-space: nowrap; /* Prevent date wrapping */
+}
+
+/* ----- Admin Reply Form Styling ----- */
+.admin-reply-form-container {
+  background-color: #f8f9fa; /* Light background for the form area */
+  padding: calc(var(--admin-spacing-unit) * 1.5); /* 24px */
+  margin-top: var(--admin-spacing-unit);
+  margin-bottom: calc(var(--admin-spacing-unit) * 1.5); /* 24px */
+  border: 1px solid var(--admin-border-color);
+  border-radius: var(--admin-border-radius);
+}
+
+.admin-reply-form-container h3 {
+  margin-top: 0;
+  margin-bottom: var(--admin-spacing-unit); /* 16px */
+  color: var(--admin-secondary-color);
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.admin-reply-form .form-group {
+  margin-bottom: var(--admin-spacing-unit); /* 16px */
+}
+
+.admin-reply-form label {
+  display: block;
+  margin-bottom: calc(var(--admin-spacing-unit) * 0.3); /* 5px */
+  font-weight: 600;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.admin-reply-form select,
+.admin-reply-form textarea {
+  width: 100%;
+  padding: calc(var(--admin-spacing-unit) * 0.6); /* 10px */
+  border: 1px solid var(--admin-border-color);
+  border-radius: 4px;
+  font-size: 0.95em;
+  box-sizing: border-box; /* Include padding and border in width */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-reply-form select:focus,
+.admin-reply-form textarea:focus {
+  border-color: var(--admin-secondary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(120, 144, 168, 0.25); /* Focus ring */
+}
+
+.admin-reply-form textarea {
+  resize: vertical; /* Allow vertical resize */
+  min-height: 80px;
+}
+
+/* ----- Button Styling ----- */
+.admin-button {
+  display: inline-block;
+  padding: calc(var(--admin-spacing-unit) * 0.6) calc(var(--admin-spacing-unit) * 1.2); /* 10px 20px */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95em;
+  font-weight: 500;
+  text-align: center;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-button-primary {
+  background-color: var(--admin-primary-color);
+  color: var(--admin-light-text-color);
+}
+
+.admin-button-primary:hover {
+  background-color: var(--admin-secondary-color);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.admin-button-primary:active {
+  background-color: #3a4b5c; /* Slightly darker on click */
+}
+
+
+/* ----- Responsive Adjustments ----- */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: var(--admin-spacing-unit); /* 16px */
+    margin: var(--admin-spacing-unit) 0;
+  }
+
+  .admin-section {
+    padding: var(--admin-spacing-unit); /* 16px */
+    margin-bottom: var(--admin-spacing-unit); /* 16px */
+  }
+
+  .admin-container h1 {
+    font-size: 1.6em;
+    margin-bottom: var(--admin-spacing-unit) * 1.5;
+  }
+
+   .admin-section h2 {
+    font-size: 1.3em;
+    margin-bottom: var(--admin-spacing-unit);
+   }
+
+  .admin-table th,
+  .admin-table td {
+    padding: calc(var(--admin-spacing-unit) * 0.5) calc(var(--admin-spacing-unit) * 0.75); /* 8px 12px */
+    font-size: 0.85em;
+  }
+
+  .admin-table thead {
+    display: none; 
+  }
+  .admin-table, .admin-table tbody, .admin-table tr, .admin-table td {
+    display: block;
+    width: 100%;
+  }
+  .admin-table tr {
+    margin-bottom: 15px;
+    border: 1px solid var(--admin-border-color);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .admin-table td {
+    text-align: right;
+    padding-left: 50%; 
+    position: relative;
+    border-bottom: 1px solid #eee;
+  }
+  .admin-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: calc(50% - 20px);
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+    color: var(--admin-primary-color);
+  }
+   .admin-table td:last-child {
+      border-bottom: none;
+   }
+
+
+  .admin-reply-form-container {
+     padding: var(--admin-spacing-unit); /* 16px */
+  }
+
+  .admin-button {
+    width: 100%; /* Make button full width on small screens */
+    padding: calc(var(--admin-spacing-unit) * 0.75); /* 12px */
+  }
+}
+
+@media (max-width: 480px) {
+    .admin-container h1 {
+      font-size: 1.4em;
+    }
+    .admin-section h2 {
+       font-size: 1.2em;
+    }
+     .admin-table th,
+     .admin-table td {
+        font-size: 0.8em; /* Further reduce font size */
+     }
+}

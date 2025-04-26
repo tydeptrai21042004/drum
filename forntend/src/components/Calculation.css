@@ -1,0 +1,138 @@
+/* General Styling */
+body {
+  /* Optional: Set a background color for the whole page if desired */
+  /* background-color: #f8f9fa; */
+}
+
+/* Container */
+/* The py-4 class already adds vertical padding, adjust if needed */
+/* .container { } */
+
+/* Breadcrumbs */
+.breadcrumb {
+  background-color: #e9ecef; /* Light background for contrast */
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.breadcrumb-item.active {
+  font-weight: bold;
+  color: #495057; /* Darker color for active step */
+}
+
+/* Progress Bar */
+.progress-bar {
+  /* Add custom styles if needed, but defaults are usually fine */
+}
+
+/* Cards */
+.card {
+  border: 1px solid rgba(0, 0, 0, 0.125); /* Subtle border */
+}
+
+.card-header {
+  background-color: #f8f9fa; /* Light header background */
+  font-weight: 500; /* Slightly bolder header text */
+  display: flex; /* Align icon and text */
+  align-items: center;
+  gap: 0.5rem; /* Space between icon and text */
+}
+
+.card-footer {
+  background-color: #f8f9fa; /* Match header background */
+  border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* Main Calculation Step Card Body */
+.card-body {
+  padding: 1.5rem; /* More padding inside the card body */
+}
+
+/* Form Elements Styling */
+/* Add some bottom margin to form controls/columns for better spacing */
+.card-body .row > [class^="col-"] {
+  margin-bottom: 1rem;
+}
+.card-body .row > [class^="col-"]:last-child {
+  margin-bottom: 0; /* No margin for last item in a row if needed */
+}
+
+/* Spacing between label and control */
+.form-label {
+  margin-bottom: 0.3rem;
+  display: block; /* Ensure it takes full width */
+}
+
+/* Style the range input and its value display */
+.table td .form-range {
+  vertical-align: middle; /* Align range nicely in table cells */
+  margin-right: 0.5rem; /* Space between range and value */
+}
+
+/* Table Styling */
+.table {
+  vertical-align: middle; /* Center content vertically in cells */
+}
+
+.table th {
+  background-color: #e9ecef; /* Light header for tables */
+}
+
+/* Specific Steps Styling */
+
+/* Step 4: K and ψ */
+/* Add margin above the results alert if it appears */
+.card-body .alert {
+  margin-top: 1.5rem;
+}
+
+/* Step 6, 7, 8: Design Sections */
+.card-body h5 {
+  margin-top: 0.5rem; /* Space above the sub-section title */
+  margin-bottom: 1.25rem; /* Space below the sub-section title */
+  padding-bottom: 0.5rem; /* Space under the text */
+  border-bottom: 1px solid #dee2e6; /* Separator line */
+}
+
+/* Results Card Styling */
+.card-header .fa-list { /* Specific icon styling if needed */
+}
+
+/* Style the scrollable results area */
+.card-body[style*="maxHeight"] {
+  padding: 1rem; /* Consistent padding */
+  background-color: #fdfdff; /* Slightly different background for results */
+  border: 1px dashed #ced4da; /* Dashed border to indicate output */
+  border-radius: 0.25rem;
+}
+
+/* Style individual result items */
+.card-body[style*="maxHeight"] > div {
+  margin-bottom: 0.6rem; /* Space between result lines */
+  padding: 0.25rem 0;
+  font-size: 0.95rem;
+}
+
+.card-body[style*="maxHeight"] > div:last-child {
+  margin-bottom: 0; /* No margin for the last item */
+}
+
+.card-body[style*="maxHeight"] > div strong {
+  color: #0d6efd; /* Highlight the result name (Bootstrap primary color) */
+  margin-right: 0.5rem;
+}
+
+/* Style the placeholder alert when no results */
+.card-body .alert-light {
+  margin-bottom: 0; /* Remove margin if it's the only thing */
+  text-align: center;
+  font-style: italic;
+  color: #6c757d; /* Muted text color */
+  background-color: transparent;
+  border: none;
+}
+
+/* Buttons in Footer */
+.card-footer .btn {
+  min-width: 100px; /* Ensure buttons have a decent minimum width */
+}

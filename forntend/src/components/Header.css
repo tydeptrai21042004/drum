@@ -1,0 +1,101 @@
+/* frontend/src/components/Header.css */
+.app-header {
+    background-color: #2c3e50; /* Dark blue-grey background */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between; /* Pushes logo and nav apart */
+    align-items: center;
+    color: #ecf0f1; /* Light text color */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky; /* Make header sticky */
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    flex-shrink: 0; /* Prevent header from shrinking */
+  }
+  
+  .logo a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.6em;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  /* Optional: Logo image styling */
+  /* .logo img {
+    height: 40px;
+    vertical-align: middle;
+  } */
+  
+  .navigation ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .navigation li {
+    margin-left: 25px; /* Space between nav items */
+  }
+  
+  .navigation a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .navigation a:hover,
+  .navigation a.active { /* Add 'active' class logic if using NavLink */
+    background-color: #3498db; /* Highlight color on hover/active */
+    color: #ffffff;
+  }
+  
+  .navigation .auth-links a {
+      background-color: #e67e22; /* Different color for login/register */
+      color: white;
+  }
+  .navigation .auth-links a:hover {
+      background-color: #d35400;
+  }
+  
+  /* Basic responsiveness */
+  @media (max-width: 768px) {
+    .app-header {
+      flex-direction: column;
+      padding: 15px;
+    }
+    .navigation ul {
+      margin-top: 15px;
+      flex-wrap: wrap; /* Allow items to wrap */
+      justify-content: center;
+    }
+    .navigation li {
+      margin: 5px 10px; /* Adjust spacing for smaller screens */
+    }
+  }
+  .logout-btn {
+    background-color: #ff4d4f; /* A nice red shade */
+    border: none;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .logout-btn:hover {
+    background-color: #ff7875; /* Lighter red on hover */
+  }
+  
+  /* Optional: Adjust styles for the user info text */
+  .user-info {
+    margin-right: 10px;
+    font-size: 0.9em;
+    color: #fff;
+  }

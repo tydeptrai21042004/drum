@@ -1,0 +1,51 @@
+/* frontend/src/components/Footer.css */
+.app-footer {
+    background-color: #34495e; /* Slightly lighter dark blue-grey */
+    color: #bdc3c7; /* Light grey text */
+    padding: 30px 20px 20px 20px; /* More padding top */
+    margin-top: auto; /* Pushes footer down in flex container */
+    flex-shrink: 0; /* Prevent footer from shrinking */
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around; /* Space out content sections */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    margin-bottom: 20px;
+    text-align: center; /* Center text on smaller screens when wrapped */
+  }
+  
+  .contact-info h4 {
+    color: #ecf0f1; /* Lighter color for heading */
+    margin-bottom: 10px;
+    font-size: 1.2em;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+    font-size: 0.95em;
+  }
+  
+  .contact-info a {
+    color: #3498db; /* Link color */
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  .copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #4a627a; /* Separator line */
+    font-size: 0.9em;
+    color: #95a5a6; /* Dimmer color for copyright */
+  }
+  
+  @media (min-width: 768px) {
+    .footer-content {
+        text-align: left; /* Align left on larger screens */
+    }
+  }

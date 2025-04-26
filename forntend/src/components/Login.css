@@ -1,0 +1,161 @@
+/* frontend/src/components/Login.css */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Adjust height as needed */
+    padding: 20px;
+    background-color: #f4f7f6; /* Light background */
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-container h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 2em;
+  }
+  
+  .login-form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; /* Limit form width */
+    box-sizing: border-box;
+  }
+  
+  .login-form .input-group {
+    margin-bottom: 20px;
+    position: relative; /* Needed for positioning the toggle button */
+  }
+  
+  .login-form label { /* Optional: Add labels if you want */
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+  }
+  
+  .login-form input[type="email"],
+  .login-form input[type="password"],
+  .login-form input[type="text"] /* For when password becomes text */
+  {
+    width: 100%;
+    padding: 12px 15px; /* Default padding */
+    padding-right: 45px; /* Add space on the right for the button */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    font-size: 1em;
+  }
+  
+  .login-form input[type="email"] {
+    /* Email input doesn't need the extra right padding if no icon is there */
+     padding-right: 15px;
+  }
+  
+  
+  .login-form .password-wrapper {
+    position: relative; /* Container for password input and button */
+    margin-bottom: 20px; /* Same margin as other input groups */
+  }
+  
+  .password-toggle-btn {
+    position: absolute;
+    right: 10px; /* Position inside the input field area */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the button */
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    font-size: 0.9em; /* Adjust size */
+    padding: 5px;
+  }
+  
+  .password-toggle-btn:hover {
+    color: #000;
+  }
+  
+  .login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #5c67f2; /* A nice blue/purple */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .login-btn:hover {
+    background-color: #4a54c4; /* Darker shade on hover */
+  }
+  
+  .login-message {
+    margin-top: 20px;
+    text-align: center;
+    color: #e74c3c; /* Default error color */
+    font-weight: bold;
+    min-height: 1.2em; /* Reserve space even when empty */
+  }
+  
+  .login-message.success {
+     color: #2ecc71; /* Success color */
+  }
+  .simulation-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /* Space between controls */
+    margin: 25px auto 0 auto; /* Space below simulation */
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle background matching sim container */
+    border-radius: 8px;
+    max-width: 500px; /* Or adjust as needed */
+    flex-wrap: wrap; /* Allow controls to wrap on smaller screens */
+    /* Inherit text color from parent or set explicitly if needed */
+    color: #ffffff; /* Assuming white text like the welcome section */
+  }
+  
+  .control-item {
+    display: flex;
+    flex-direction: column; /* Stack label and input/button */
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .control-item label {
+    font-size: 0.9em;
+    font-weight: 500;
+  }
+  
+  .control-item input[type="range"] {
+    cursor: pointer;
+    width: 150px; /* Adjust width */
+  }
+  
+  /* Specific styling for range input track/thumb can be added here for different browsers */
+  
+  .start-stop-btn {
+    padding: 8px 20px;
+    background-color: #e67e22; /* Orange button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    min-width: 100px; /* Ensure consistent width */
+    text-align: center;
+  }
+  
+  .start-stop-btn:hover {
+    background-color: #d35400; /* Darker orange */
+  }
